@@ -58,17 +58,4 @@ public class ExpressionTree
         return new ExpressionTree(root.right());
     }
 
-    /** 
-     * Retorna um @a Iterator that supports the requested
-     * traveralOrder.
-     */
-   // public Iterator<ExpressionTree> makeIterator(String traversalOrderRequest)
-    //{
-        /* 
-         * Use the TreeIteratorFactory to create the requested
-         * iterator.
-         */
-//        return treeIteratorFactory.makeIterator(this,
-                                                //traversalOrderRequest);
-   // }
 }
