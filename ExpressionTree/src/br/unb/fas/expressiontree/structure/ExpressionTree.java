@@ -1,5 +1,9 @@
 package br.unb.fas.expressiontree.structure;
 
+import java.util.Iterator;
+
+import br.unb.fas.expressiontree.traversal.Visitor;
+
 
 //import java.util.Iterator;
 
@@ -57,5 +61,17 @@ public class ExpressionTree
     {
         return new ExpressionTree(root.right());
     }
+    
+    
+    /** Aceita um @a visitor. */
+    public void accept(Visitor visitor)
+    {
+        root.accept(visitor);
+    }
+
+	public Iterator<ExpressionTree> makeIterator(String traversalOrder) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }
