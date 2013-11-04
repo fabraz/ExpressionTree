@@ -23,7 +23,7 @@ public class PreOrderIterator implements Iterator<ExpressionTree>
                 stack.push(tree);
         }
 
-    /** Avança a próxima expression tree na pilha. */
+    /** Avança a proxima expression tree na pilha. */
     public ExpressionTree next() 
     {
         ExpressionTree result = stack.peek();
@@ -33,7 +33,7 @@ public class PreOrderIterator implements Iterator<ExpressionTree>
                 /**
                  * Precisamos retirar o nodo da pilha antes
                  * de empilhar o filho, ou senão revisitaremos
-                 * esse nó posteriormente.
+                 * esse nodo posteriormente.
                  */
                 ExpressionTree temp = stack.pop();
 	
@@ -41,7 +41,7 @@ public class PreOrderIterator implements Iterator<ExpressionTree>
                  * Observer a ordem aqui: primeiro direito, depois esquerdo. 
                  * Uma vez que se trata de um LIFO, isso resulta em um filho 
                  * esquerdo sendo o primeiro avaliado, o que se encaixa
-                 * na estratégia Pre-order.
+                 * na estrategia Pre-order.
                  */
                 if (!temp.right().isNull())
                     stack.push(temp.right());

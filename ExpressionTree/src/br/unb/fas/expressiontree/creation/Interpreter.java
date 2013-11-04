@@ -8,11 +8,11 @@ import br.unb.fas.expressiontree.structure.ExpressionTree;
  * @class Interpreter
  *
  * @brief Analisa sintaticamente a expressão fornecida como entrada
- * 		  e constroi a árvore de expressão a partir da árvore sintática.
+ * 		  e constroi a expression tree a partir da árvore sintática.
  * 	 	  Esta classe exerce o papel de "Interpreter" no padrão Interpreter
  * 		  adicionado da precedência dos operadores/operandos para guiar 
  * 		  a criação da árvore sintática. O padrão Builder é usada também 
- * 		  para construir os nós correspondentes na árvore de expressão.
+ * 		  para construir os nós correspondentes na expression tree.
  */
 public class Interpreter
 {
@@ -43,9 +43,9 @@ public class Interpreter
 
 
     /**
-     * Este método primeiramente converte a string na árvore sintática e então
-     * constroi uma árvore de expressão a partir da árvore sintática. A sua
-     * implementação segue o padrão Template Method.
+     * Este metodo primeiramente converte a string na árvore sintática e então
+     * constroi uma expression tree a partir da arvore sintatica. A sua
+     * implementação segue o padrao Template Method.
      */
     public ExpressionTree interpret(String inputExpression)
     {

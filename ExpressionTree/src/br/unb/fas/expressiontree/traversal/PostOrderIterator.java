@@ -8,7 +8,7 @@ import br.unb.fas.expressiontree.structure.ExpressionTree;
 /**
  * @class PostOrderIterator
  * 
- * @brief Iterage por uma @a Tree usando a forma de percorrer in-order. 
+ * @brief Iterage por uma @a Tree usando a forma de percorrer post-order. 
 
  */
 public class PostOrderIterator implements Iterator<ExpressionTree>
@@ -24,9 +24,9 @@ public class PostOrderIterator implements Iterator<ExpressionTree>
                 stack.push(tree);
 			
                 /** 
-                 * O código comentado não funciona em um nodo operador unário sem 
-                 * nodos a esquerda, mas a direita - ou pelo menos, existe algum 
-                 * profundidade que não seja aprofundada.
+                 * O codigo comentado nao funciona em um nodo operador unário sem 
+                 * nodos a esquerda, mas a direita - ou, pelo menos, existe algum 
+                 * profundidade que nao seja aprofundada.
                  */
                 while(!tree.isNull())
                     {
@@ -36,7 +36,7 @@ public class PostOrderIterator implements Iterator<ExpressionTree>
                             {
                                 /** 
                                  * Se existir um esquerdo, atualize o atual, 
-                                 * esse é o caso de todos que não sejam negações.
+                                 * esse e o caso de todos que nao sejam negacoes.
                                  */
                                 stack.push(tree.left());
                                 tree = tree.left();
@@ -44,9 +44,9 @@ public class PostOrderIterator implements Iterator<ExpressionTree>
                         else 
                             {
                                 /** 
-                                 * Se não existir esquero, então 
-                                 * current = current.right_ isso trata dos nos unarios, 
-                                 * como as negações.
+                                 * Se nao existir esquerdo, então 
+                                 * current = current.right_ isso trata dos nodos unarios, 
+                                 * como as negacoes.
                                  */
                                 tree = tree.right();
                             }
@@ -54,15 +54,15 @@ public class PostOrderIterator implements Iterator<ExpressionTree>
             }
     }
 	
-    /** Avança a próxima expression tree na pilha. */
+    /** Avança a proxima expression tree na pilha. */
     public ExpressionTree next() 
     {
         ExpressionTree result = stack.peek();
         if (!stack.isEmpty())
 	    {
                 /**
-                 * É necessário retirar o nó da pulha antes de 
-                 * empilhar o filho, ou então revisitaremos esse nó no futuro
+                 * e necessario retirar o nodo da pulha antes de 
+                 * empilhar o filho, ou então revisitaremos esse nodo no futuro
                  */
 
                 ExpressionTree temp = stack.pop();
@@ -81,17 +81,17 @@ public class PostOrderIterator implements Iterator<ExpressionTree>
                                     {
                                         /**
                                          * Caso exista um esquerdo, então
-                                         * atualize temp. Esse é o caso para todos, 
-                                         * fora negação
+                                         * atualize temp. Esse e o caso para todos, 
+                                         * fora negacao
                                          */
                                         stack.push(temp.left());
                                         temp = temp.left();
                                     }
                                 else
                                     /**
-                                     * Se não existir esquerdo, então
+                                     * Se nao existir esquerdo, então
                                      * temp = temp->right
-                                     * isso trata dos nodos unários, como negação.
+                                     * isso trata dos nodos unarios, como negacao.
                                      */
                                     temp = temp.right();
                             }

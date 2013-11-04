@@ -35,16 +35,16 @@ public class InOrderIterator implements Iterator<ExpressionTree>
 		
         if (!stack.isEmpty())
 	    {
-                /** Caso tenhamos nodos maiores que o próprio */
+                /** Caso tenhamos nodos maiores que o proprio */
                 if (!stack.peek().right().isNull())
                     {
                         /**
-                         * Empilha o nó filho direito e desempilha o pai 
+                         * Empilha o nodo filho direito e desempilha o pai 
                          */
                         stack.push(stack.pop().right());
 
                         /** 
-                         * Mantem o empilhamento até chegar ao filho mais a esquerda.
+                         * Mantem o empilhamento ate chegar ao filho mais a esquerda.
                          */
                         while(!stack.peek().left().isNull())
                             stack.push(stack.peek().left());
@@ -62,7 +62,7 @@ public class InOrderIterator implements Iterator<ExpressionTree>
         return !stack.empty();
     }
 
-    /** Remove uma árvore de expressão do topo da pilha. */
+    /** Remove uma arvore de expressao do topo da pilha. */
     public void remove() 
     {
         stack.pop();

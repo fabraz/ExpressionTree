@@ -34,7 +34,7 @@ public class LevelOrderIterator implements Iterator<ExpressionTree>
             {
                 /** 
                  * Precisamos retirar o nodo da pilha antes de empilhar o filho,
-                 * caso contrário esse nodo será revisitado posteriormente
+                 * caso contrário esse nodo sera revisitado posteriormente
                  */
                 ExpressionTree temp = queue.remove();
 
@@ -42,7 +42,7 @@ public class LevelOrderIterator implements Iterator<ExpressionTree>
                  * Observe a ordem: primeiro direita, depois esquerda. Uma vez que 
                  * configura um LIFO (last input first output), isso resulta no
                  * filho da esquerda sendo o primeiro avaliado, o que se encaixa na
-                 * estratégia pre-order.
+                 * estrategia pre-order.
                  */
                 if (!temp.right().isNull())
                     queue.add (temp.right());
@@ -53,13 +53,13 @@ public class LevelOrderIterator implements Iterator<ExpressionTree>
         return result;
     }
 	
-    /** Verifica se a fila está vazia. */
+    /** Verifica se a fila esta vazia. */
     public boolean hasNext() 
     {
         return !queue.isEmpty();
     }
 
-    /** Revmoe uma expression tree da frente da fila. */
+    /** Remove uma expression tree da frente da fila. */
     public void remove() 
     {
         queue.remove();
